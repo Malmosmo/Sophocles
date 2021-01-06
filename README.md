@@ -1,4 +1,4 @@
-# WebGL-Ray-Marcher
+# Sophocles - WebGL Ray Marcher
 
 A WebGL based RayMarcher.
 

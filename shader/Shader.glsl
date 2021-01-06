@@ -103,7 +103,7 @@ vec3 shMain(vec3 eye, vec3 dir) {
 
 
     // shadow
-    float s = 1.0;// softshadow(point, Ldirection, 16.0) * 0.75 + 0.25;
+    float s = softshadow(point, Ldirection, 16.0) * 0.75 + 0.25;
 
     return applyFog(color * s, dist.depth);
 

@@ -39,7 +39,7 @@ class Camera {
     /**
      * Changes the direction the camera is
      * looking if your mouse moves
-     * @param {IDK} event Mouse event
+     * @param {MouseMove} event Mouse event
      */
     MouseMove(event) {
         if (

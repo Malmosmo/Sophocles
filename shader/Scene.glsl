@@ -68,9 +68,16 @@ sdRect(vec3 point, vec3 a, vec3 b, vec3 c, vec3 d) -> float                     
 
 depthColorPair sceneSDF(vec3 point) {
 
-    point = opTwist(point, 0.2);
+    //point = opTwist(point, 0.2);
 
-   float d2 = sdBoundingBox(point, vec3(1.0, 1.0, 1.0), 0.2);
+   // float d2 = sdBoundingBox(point, vec3(1.0, 1.0, 1.0), 0.1);
+   
+   float d = sdSphere(point, 1.0);
+   float d1 = sdPlane(point, vec3(0.0, 1.0, 0.0), 0.75);
+   float d2 = sdTriangle(point, vec3(2.0, 0.0, 0.0), vec3(0.0, 2.0, 0.0), vec3(2.0, 0.0, 1.0)) -0.01;
 
-    return depthColorPair(d2, vec3(0.2, 0.4, 0.1));
+   d = opUnion(d, d1);
+   d = opUnion(d, d2);
+
+    return depthColorPair(d, vec3(0.2, 0.4, 0.1));
 }

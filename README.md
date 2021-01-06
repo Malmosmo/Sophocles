@@ -1,4 +1,4 @@
-# Sophocles
+# Sophocles - Ray Marcher
 
 A WebGL based RayMarcher.
 
